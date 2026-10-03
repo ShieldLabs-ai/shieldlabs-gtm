@@ -114,7 +114,7 @@ const copyFromWindow = require('copyFromWindow');
 const getType = require('getType');
 const callLater = require('callLater');
 
-const adapterUrl = 'https://dev.landing.shieldlabs.ai/gtm/v1.0.0/adapter.js';
+const adapterUrl = 'https://shieldlabs-ai.github.io/shieldlabs-gtm/gtm/v1.0.0/adapter.js';
 const push = createQueue('dataLayer');
 const mode = data.tagType;
 const resultName = data.resultName === undefined || data.resultName === '' ? 'ShieldLabsResult' : data.resultName;
@@ -388,7 +388,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://dev.landing.shieldlabs.ai/gtm/v1.0.0/adapter.js"
+                "string": "https://shieldlabs-ai.github.io/shieldlabs-gtm/gtm/v1.0.0/adapter.js"
               }
             ]
           }

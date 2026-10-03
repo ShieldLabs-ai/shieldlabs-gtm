@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 
-const adapterUrl = process.env.SHIELDLABS_GTM_ADAPTER_URL || 'https://dev.landing.shieldlabs.ai/gtm/v1.0.0/adapter.js';
+const adapterUrl = process.env.SHIELDLABS_GTM_ADAPTER_URL || 'https://shieldlabs-ai.github.io/shieldlabs-gtm/gtm/v1.0.0/adapter.js';
 if (!/^https:\/\//.test(adapterUrl)) throw new Error('The adapter URL must use HTTPS.');
 const info = {
   type: 'TAG', id: 'cvt_temp_public_id', version: 1, securityGroups: [], containerContexts: ['WEB'],

@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Verify generated template is committed
+        run: git diff --exit-code -- template.tpl
+      - name: Check packaged browser bundle
+        run: |
+          npm pack --ignore-scripts
+          node --check dist/adapter.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gtm-node-${{ matrix.node }}
+          path: |
+            template.tpl
+            dist/adapter.js
+            dist/SHA256SUMS
+            *.tgz
