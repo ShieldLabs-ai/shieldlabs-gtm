@@ -27,6 +27,14 @@ All six resulting request IDs were read by a downstream GTM tag using a real Dat
 
 ![Real GTM Preview summary with six downstream executions](images/gtm-preview.png)
 
+## Public release hosting
+
+On 4 October 2026, the release template was rebuilt for the versioned GitHub Pages adapter URL, reimported into the real GTM container and saved. All five native tests passed again. The public adapter returned HTTP 200 with a JavaScript MIME type and matched the tested bundle byte for byte (SHA-256 `12e5aaa56e48fcebd446724f8b80eca2dc2b65dcdabb594e8bd76cf267505b05`).
+
+A fresh cold Load and identify run loaded the adapter from GitHub Pages and the agent from the production ShieldLabs CDN on the development landing. The downstream GTM tag read the new request ID, and the corresponding History row returned that ID, Visitor ID and Device ID. Captured identification and follow-up requests returned HTTP 200; Tag Assistant reported zero console errors.
+
+GitHub CI passed the automated checks on Node 20, 22 and 24. The GitHub Pages deployment also completed successfully.
+
 ## Scope
 
 These checks establish the integration's behavior in the tested browser, container and environment. They do not guarantee delivery through every content blocker or site CSP. The development test workspace remains unpublished; customers import the template and publish their own containers.

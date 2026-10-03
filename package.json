@@ -8,7 +8,7 @@
   "repository": { "type": "git", "url": "https://github.com/ShieldLabs-ai/shieldlabs-gtm.git" },
   "homepage": "https://github.com/ShieldLabs-ai/shieldlabs-gtm#readme",
   "bugs": { "url": "https://github.com/ShieldLabs-ai/shieldlabs-gtm/issues" },
-  "files": ["dist", "template.tpl", "CHANGELOG.md", "README.md", "THIRD_PARTY_NOTICES.md", "metadata.yaml"],
+  "files": ["dist", "template.tpl", "CHANGELOG.md", "README.md", "CONTRIBUTING.md", "docs", "THIRD_PARTY_NOTICES.md", "metadata.yaml"],
   "main": "dist/adapter.js",
   "unpkg": "dist/adapter.js",
   "jsdelivr": "dist/adapter.js",
