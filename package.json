@@ -1,0 +1,25 @@
+{
+  "name": "@shieldlabs-ai/gtm-adapter",
+  "version": "1.0.0",
+  "description": "Google Tag Manager adapter for the ShieldLabs browser agent",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "ShieldLabs Inc. <contact@shieldlabs.ai>",
+  "repository": { "type": "git", "url": "https://github.com/ShieldLabs-ai/shieldlabs-gtm.git" },
+  "homepage": "https://github.com/ShieldLabs-ai/shieldlabs-gtm#readme",
+  "bugs": { "url": "https://github.com/ShieldLabs-ai/shieldlabs-gtm/issues" },
+  "files": ["dist", "template.tpl", "CHANGELOG.md", "README.md", "THIRD_PARTY_NOTICES.md", "metadata.yaml"],
+  "main": "dist/adapter.js",
+  "unpkg": "dist/adapter.js",
+  "jsdelivr": "dist/adapter.js",
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/template.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run build && npm test",
+    "prepublishOnly": "npm run check"
+  },
+  "dependencies": { "@shieldlabs-ai/js": "1.0.1" },
+  "devDependencies": { "esbuild": "0.25.12" },
+  "engines": { "node": ">=20" }
+}
