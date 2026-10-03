@@ -96,6 +96,8 @@ Run the template's included tests inside GTM as well as Node tests. Node tests d
 
 The development fixture is at `https://dev.landing.shieldlabs.ai/gtm-test`. Open **GTM Preview** for the test container and connect that URL before using its buttons; the fixture's test tags are saved in an unpublished workspace. The page's event log shows its own trigger events, and Tag Assistant shows the template's processed events and tag outcomes.
 
+The fixture's development label refers to the landing deployment. Choose the agent environment for the key's account: the existing ShieldLabs checker uses Production services even when its frontend runs on the development landing. The final live run used that checker configuration: 12 scenarios passed and all six GTM request IDs were retrieved from History, including an exact User HID match. See the accompanying verification report.
+
 ## License and support
 
 Apache-2.0. The bundled browser SDK is MIT-licensed; see `THIRD_PARTY_NOTICES.md`. Report issues in this repository or email contact@shieldlabs.ai.
